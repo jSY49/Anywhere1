@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- HOME -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:clipToOutline="true"
+            android:src="@drawable/test_img"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/WhereIsNext"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/hometripimg1"
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/test_img" />
+
+                <ImageView
+                    android:id="@+id/hometripimg2"
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/test_img"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@+id/hometripimg1"/>
+
+                <ImageView
+                    android:id="@+id/hometripimg3"
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/test_img"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@+id/hometripimg2"/>
+
+                <ImageView
+                    android:id="@+id/hometripimg4"
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/test_img"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@+id/hometripimg3"/>
+            </RelativeLayout>
+        </HorizontalScrollView>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*"
+            android:layout_margin="10dp">
+
+            <TableRow>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/GoMoreTrip"
+                    android:textColor="#000000"
+                    android:id="@+id/homegoMore"
+                    android:textAllCaps="false"
+                    android:background="#00ff0000"
+                    android:shadowColor ="#0f0f0f"
+                    android:shadowRadius="5.0"
+                    android:shadowDx="3.0"
+                    android:shadowDy="5.0"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/GowhetherIsGood"
+                    android:textColor="#000000"
+                    android:id="@+id/homegowhtr"
+                    android:textAllCaps="false"
+                    android:background="#00ff0000"
+                    android:shadowColor ="#0f0f0f"
+                    android:shadowRadius="5.0"
+                    android:shadowDx="3.0"
+                    android:shadowDy="5.0"
+                    />
+
+            </TableRow>
+
+
+        </TableLayout>
+
+        <TextView
+            android:layout_margin="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/howisthisitem"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/homesellimg1"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:src="@drawable/test_img"
+                android:layout_margin="10dp"
+                android:layout_centerHorizontal="true"
+                />
+
+            <ImageView
+                android:id="@+id/homesellimg2"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/homesellimg1"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/test_img" />
+            <ImageView
+                android:id="@+id/homesellimg3"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:src="@drawable/test_img"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/homesellimg2"
+                />
+            <ImageView
+                android:id="@+id/homesellimg4"
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:src="@drawable/test_img"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/homesellimg3"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+

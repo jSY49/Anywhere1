@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav1"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="home"
+        />
+    <item
+        android:id="@+id/nav2"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_book_online_24"
+        android:title="book"
+        />
+    <item
+        android:id="@+id/nav3"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="map"
+        />
+    <item
+        android:id="@+id/nav4"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="search"
+        />
+    <item
+        android:id="@+id/nav5"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="user"
+        />
+</menu>
+
+
+
+<!--
+. setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS)
+
+  - 종류
+
+     . never: 항상 액션 아이템으로 표시하지 않음 (기본값)
+
+     . ifRoom: 액션 아이템을 표시할 수 있는 공간이 있다면 액션 아이템을 표시함
+
+     . withText: 메뉴 항목의 텍스트를 함께 액션 아이템으로 표시
+
+     . always: 항상 액션 아이템으로 표시
+
+
+
+enabled: 활성화
+-->
