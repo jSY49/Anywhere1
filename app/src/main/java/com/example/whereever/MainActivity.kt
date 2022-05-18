@@ -1,17 +1,15 @@
 package com.example.whereever
 
+
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.FrameLayout
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
 import com.example.whereever.fragment.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.fragment_user.*
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,9 +24,9 @@ class MainActivity : AppCompatActivity() {
         val fbsconnect = firebaseConnect()
         fbsconnect.firbaseInit()
 
-        val btmNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+        //val btmNav = findViewById<BottomNavigationView>(R.id.bottomNav)
 
-        btmNav.setOnItemSelectedListener { item ->
+        bottomNav.setOnItemSelectedListener { item ->
             changeFragment(
                 when (item.itemId) {
                     R.id.nav1 -> {
@@ -40,34 +38,35 @@ class MainActivity : AppCompatActivity() {
                     R.id.nav3 -> {
                         mapFragment()
                     }
-                    R.id.nav4 -> {
+                    else -> {
                         searchFragment()
                     }
-                    else -> {
-                        //userFragment()
-                        if(fbsconnect.fb_user()!=null){
-                            userFragment()
-                            //profileNm.setText(fbsconnect.fb_userEmail())
-                        } else {
-                            loginFragment()
-                        }
 
-
-                    }
                 }
             )
             true
         }
         //앱 첫 실행시 열리는 메뉴
-        btmNav.selectedItemId = R.id.nav1
+        bottomNav.selectedItemId = R.id.nav1
 
+        //유저버튼
+        userbtn.setOnClickListener {
+            if(fbsconnect.fb_user()!=null){
+                val intent = Intent(applicationContext, userActivity::class.java)
+                startActivity(intent)
+            }
+            else{
+                val intent = Intent(applicationContext, loginMenuActivity::class.java)
+                startActivity(intent)
+            }
 
+        }
 
 
     }
 
     //액티비티에 fragment띄우기
-     fun changeFragment(fragment: Fragment) {
+    fun changeFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fram1, fragment)

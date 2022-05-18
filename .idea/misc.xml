@@ -7,7 +7,9 @@
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.5323076923076923" />
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.19814814814814816" />
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/drawable/roundshape.xml" value="0.512962962962963" />
-        <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/drawable/userbtnimg.xml" value="0.35572916666666665" />
+        <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/activityuser.xml" value="0.4483695652173913" />
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/areatrip.xml" value="0.3220108695652174" />
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/email_sign_in.xml" value="0.25" />
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/email_sign_up.xml" value="0.4746376811594203" />
@@ -21,6 +23,7 @@
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/fragment_region_list.xml" value="0.284375" />
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/fragment_search.xml" value="0.2875905797101449" />
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/fragment_user.xml" value="0.33" />
+        <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/loginmenu.xml" value="0.4483695652173913" />
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/layout/whereisclean.xml" value="0.3220108695652174" />
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/menu/navigationmenu.xml" value="0.33" />
         <entry key="..\:/Users/jseun/AndroidStudioProjects/WhereEver2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.5323076923076923" />

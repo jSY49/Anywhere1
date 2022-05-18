@@ -7,14 +7,48 @@
     tools:context=".MainActivity">
 
 
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:ignore="MissingConstraints">
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/app_name"-->
+<!--            android:textSize="30dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            />-->
+        <Button
+            android:id="@+id/userbtn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_baseline_account_circle_24"
+            android:drawableTint="#BC8B8B"
+
+            />
+
+    </RelativeLayout>
+
+
+
+
+        />
+
     <FrameLayout
         android:id="@+id/fram1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNav"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
 
     </FrameLayout>

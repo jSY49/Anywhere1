@@ -25,6 +25,8 @@
         <activity android:name=".wheatherIsClean"/>
         <activity android:name=".arealist"/>
         <activity android:name=".emaillogin"/>
+        <activity android:name=".loginMenuActivity"/>
+        <activity android:name=".userActivity"/>
     </application>
 
 </manifest>
