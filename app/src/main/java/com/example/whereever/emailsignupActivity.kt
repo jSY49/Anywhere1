@@ -5,12 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.email_sign_in.*
 import kotlinx.android.synthetic.main.email_sign_up.*
-import kotlinx.android.synthetic.main.fragment_login.*
+
 
 
 class emailsignupActivity: AppCompatActivity() {

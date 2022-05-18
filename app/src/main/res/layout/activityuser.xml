@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragment.userFragment">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,8 +11,8 @@
             android:id="@+id/profileImg"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_baseline_account_circle_24"
             android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_baseline_account_circle_24"
 
             />
 
@@ -63,7 +61,4 @@
         </LinearLayout>
     </RelativeLayout>
 
-
-
-</ScrollView>
-
+</androidx.constraintlayout.widget.ConstraintLayout>
