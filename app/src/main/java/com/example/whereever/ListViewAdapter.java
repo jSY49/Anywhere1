@@ -25,7 +25,6 @@ public class ListViewAdapter extends BaseAdapter {
     private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>() ;
     Context context;
 
-    private String[] imageUrls;
 
     // ListViewAdapter의 생성자
     public ListViewAdapter() {

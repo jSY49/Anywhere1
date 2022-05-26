@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -23,12 +24,19 @@ import java.util.ArrayList;
 public class listOfareatrip extends Activity {
 
     Button bckbtn,searchbtn;
-    String sp1,sp2;
-    ArrayAdapter<CharSequence> adspin1, adspin2;
+    String sp1="1",sp2="1",srt="O";
+    ArrayAdapter<CharSequence> adspin1, adspin2,adsortspin;
     String[][] arealist;
 
     Spinner spin1;
     Spinner spin2;
+    Spinner sortspin;
+
+    //리스트 뷰
+    ListView listview ;
+    ListViewAdapter adapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +48,10 @@ public class listOfareatrip extends Activity {
         //text=findViewById(R.id.testTv);
         spin1 = (Spinner)findViewById(R.id.spinner1);
         spin2 = (Spinner)findViewById(R.id.spinner2);
-        arealist= new String[3][10];
+        sortspin = (Spinner)findViewById(R.id.sortspinenr);
+        arealist= new String[3][30];
 
-        //리스트 뷰
-        ListView listview ;
-        ListViewAdapter adapter;
+
 
         // Adapter 생성
         adapter = new ListViewAdapter() ;
@@ -53,12 +60,18 @@ public class listOfareatrip extends Activity {
         listview = (ListView) findViewById(R.id.listview1);
         listview.setAdapter(adapter);
 
-
+        
 
         adspin1 = ArrayAdapter.createFromResource(this, R.array.firstSelect, android.R.layout.simple_spinner_dropdown_item);//R.layout.simple_~~~는 안드로이드에서 기본제공하는 spinner 모양
         adspin1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin1.setAdapter(adspin1);
 
+        adsortspin = ArrayAdapter.createFromResource(this, R.array.sort_list, android.R.layout.simple_spinner_dropdown_item);
+        adsortspin.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sortspin.setAdapter(adsortspin);
+
+
+       // runthread();
 
         spin1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -89,6 +102,31 @@ public class listOfareatrip extends Activity {
         });
 
 
+        sortspin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(adsortspin.getItem(i).equals("제목순")){
+                    srt="O";
+                }
+                else if(adsortspin.getItem(i).equals("조회순")){
+                    srt="P";
+                }
+                else if(adsortspin.getItem(i).equals("수정일순")){
+                    srt="Q";
+                }
+                else if(adsortspin.getItem(i).equals("생성일순")){
+                    srt="R";
+                }
+                runthread();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+
+
         //ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, LIST_MENU) ;
 
         //검색 버튼
@@ -97,41 +135,8 @@ public class listOfareatrip extends Activity {
 
             @Override
             public void onClick(View view) {
+                runthread();
 
-                TourApi_ tourapi=new TourApi_("areaBasedList");
-                tourapi.set_tourdataList_Url(sp1,sp2);
-                String get_Url=tourapi.getUrl();
-
-                adapter.clearAll();
-
-
-                new Thread(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        // TODO Auto-generated method stub
-                        arealist= tourapi.get_area(get_Url,sp1,sp2);
-
-
-
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                // TODO Auto-generated method stub
-                                //아이템 추가.
-
-                                for(int i=0;i<10;i++){
-                                    adapter.addItem(new ListViewItem(arealist[0][i],arealist[1][i],arealist[2][i])) ;
-
-                                }
-                                listview.setAdapter(adapter);
-
-
-                            }
-                        });
-
-                    }
-                }).start();
             }
         });
 
@@ -154,44 +159,52 @@ public class listOfareatrip extends Activity {
                 // TODO : use item data.
             }
         }) ;
+//Button button = new Button(this);
+//    View.addView(button);
 
-
-
-//        TourApi_ api_areaCode=new TourApi_("areaCode");
-//        String get_Url=api_areaCode.getUrl("areaCode");
-
-
-
-//        //테스트 버튼
-//        btntest.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                TourApi_ tourapi=new TourApi_("areaCode");
-//                String get_Url=tourapi.getUrl("areaCode");
-//                new Thread(new Runnable() {
-//
-//                    @Override
-//                    public void run() {
-//                        // TODO Auto-generated method stub
-//                        data= tourapi.TestgetXmlData(get_Url,"areaCode");
-//
-//
-//                        runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                // TODO Auto-generated method stub
-//                                text.setText(data); //TextView에 문자열  data 출력
-//
-//                            }
-//                        });
-//
-//                    }
-//                }).start();
-//            }
-//        });
 
 
     }
+    public void runthread(){
+        TourApi_ tourapi=new TourApi_("areaBasedList");
+        tourapi.set_tourdataList_Url(sp1,sp2,srt);
+        String get_Url=tourapi.getUrl();
+
+        Log.d("set_tourdataList_getURL",get_Url);
+        adapter.clearAll(); //리스트 뷰를 모두 지우는 함수 호출
+
+
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                arealist= tourapi.get_area(get_Url,sp1,sp2);
+
+
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        // TODO Auto-generated method stub
+                        //아이템 추가.
+
+                        for(int i=0;i<30;i++){
+                            adapter.addItem(new ListViewItem(arealist[0][i],arealist[1][i],arealist[2][i])) ;
+                        }
+                        listview.setAdapter(adapter);
+
+
+                        //페이지 이동 버튼
+
+
+                    }
+                });
+
+            }
+        }).start();
+    }
+
     public void scndSpinner(int i){
 
         int whichone=R.array.second_seoul;  //기본

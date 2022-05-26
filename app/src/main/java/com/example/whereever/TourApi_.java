@@ -17,26 +17,32 @@ public class TourApi_ {
 
     String settingUrl="http://api.visitkorea.or.kr/openapi/service/rest/KorService/";
     String[][] arealist;
+    String totalcount;
 
     public TourApi_() {
         //String settingUrl="http://api.visitkorea.or.kr/openapi/service/rest/KorService/";
     }
     public TourApi_(String wantService) {
-        settingUrl += wantService + "?ServiceKey=" + BuildConfig.MY_API_KEY + "&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest";
+        settingUrl += wantService + "?ServiceKey=" + BuildConfig.MY_API_KEY + "&numOfRows=30&pageNo=1&MobileOS=ETC&MobileApp=AppTest";
+    }
+    String gettotalcount(){
+        return totalcount;
     }
     String getUrl(){
-        //settingUrl += wantService + "?ServiceKey=" + BuildConfig.MY_API_KEY + "&numOfRows=17&pageNo=1&MobileOS=ETC&MobileApp=AppTest";
+        //settingUrl += wantService + "?ServiceKey=" + BuildConfig.MY_API_KEY + "&numOfRows=30&pageNo=1&MobileOS=ETC&MobileApp=AppTest";
         return settingUrl;
     }
-    String set_tourdataList_Url(String sp1,String sp2){
-        settingUrl += "&areaCode="+sp1+"&sigunguCode="+sp2+"&contentTypeId=12";//contentTypeId 12는 관광지
+    
+    String set_tourdataList_Url(String sp1,String sp2,String srt){
+        settingUrl += "&areaCode="+sp1+"&sigunguCode="+sp2+"&contentTypeId=12"+"&arrange="+srt;//contentTypeId 12는 관광지   arrange는 정렬
+        Log.d("set_tourdataList_Url: ",settingUrl);
         return settingUrl;
     }
 
     //+ areaCode=??&sigunguCode=??
     String[][] get_area(String newUrl,String sp1,String sp2){
 
-        arealist= new String[3][10];
+        arealist= new String[3][30];
         int i=0,j=0,k=0;
         StringBuffer buffer=new StringBuffer();
 
@@ -80,10 +86,11 @@ public class TourApi_ {
                             xpp.next();
                             arealist[2][k]=xpp.getText();
                             k++;
-
                         }
-
-
+                        else if(tag.equals("totalCount")){
+                            xpp.next();
+                            totalcount=xpp.getText();
+                        }
                         break;
 
                     case XmlPullParser.TEXT:
@@ -110,6 +117,11 @@ public class TourApi_ {
         return arealist;
         
     }
+
+
+
+
+
 
 
 

@@ -57,15 +57,35 @@
             </TableRow>
         </TableLayout>
 
+        <Spinner
+            android:id="@+id/sortspinenr"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/tableLy"
+            android:layout_alignParentRight="true"
+            android:spinnerMode="dropdown"
+            android:popupBackground="@color/white"
+            />
+
         <ListView
             android:id="@+id/listview1"
-            android:layout_below="@+id/tableLy"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_below="@+id/sortspinenr" />
+
+
 
     </RelativeLayout>
 
 
+    <Button
+        android:id="@+id/morebtn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/relay2"
+        android:text="더보기"
+        android:gravity="center"
+        />
 
 
 </RelativeLayout>
