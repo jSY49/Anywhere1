@@ -17,7 +17,7 @@ class userActivity: AppCompatActivity() {
 
         val user = fbsconnect.fb_user()
 
-
+        profileNm.setText(user?.email)
 
         //로그아웃
         logoutBtn?.setOnClickListener {

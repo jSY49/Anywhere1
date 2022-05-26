@@ -10,6 +10,9 @@
     <string name="whetherIsGood">날씨/미세먼지 좋은 여행지</string>
     <string name="AreaTrip">지역별 여행지</string>
     <string name="emailsignIn">이메일로 로그인 하기</string>
+    <string name="search">검색</string>
+
+
 
 
 </resources>

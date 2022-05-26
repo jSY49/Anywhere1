@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.example.whereever.arealist
+import com.example.whereever.listOfareatrip
 import com.example.whereever.wheatherIsClean
 
 // TODO: Rename parameter arguments, choose names that match
@@ -55,7 +56,7 @@ class MainFragment : Fragment() {
         homegomrButton?.setOnClickListener(object :View.OnClickListener {
             override fun onClick(v: View?) {
 
-                val intent = Intent(getActivity(), arealist::class.java)
+                val intent = Intent(getActivity(), listOfareatrip::class.java)
                 startActivity(intent)
 
             }
