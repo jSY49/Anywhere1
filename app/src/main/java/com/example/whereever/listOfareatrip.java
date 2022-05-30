@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class listOfareatrip extends Activity {
 
     Button bckbtn,searchbtn;
-    String sp1="1",sp2="1",srt="O";
+    String sp1="1",sp2="1",srt="A";
     ArrayAdapter<CharSequence> adspin1, adspin2,adsortspin;
     String[][] arealist;
 
@@ -107,16 +107,16 @@ public class listOfareatrip extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(adsortspin.getItem(i).equals("제목순")){
-                    srt="O";
+                    srt="A";
                 }
                 else if(adsortspin.getItem(i).equals("조회순")){
-                    srt="P";
+                    srt="B";
                 }
                 else if(adsortspin.getItem(i).equals("수정일순")){
-                    srt="Q";
+                    srt="C";
                 }
                 else if(adsortspin.getItem(i).equals("생성일순")){
-                    srt="R";
+                    srt="D";
                 }
                 runthread();
             }
@@ -159,16 +159,15 @@ public class listOfareatrip extends Activity {
                 // TODO : use item data.
             }
         }) ;
-//Button button = new Button(this);
-//    View.addView(button);
-
-
 
     }
     public void runthread(){
+
         TourApi_ tourapi=new TourApi_("areaBasedList");
         tourapi.set_tourdataList_Url(sp1,sp2,srt);
         String get_Url=tourapi.getUrl();
+
+
 
         Log.d("set_tourdataList_getURL",get_Url);
         adapter.clearAll(); //리스트 뷰를 모두 지우는 함수 호출
@@ -180,7 +179,6 @@ public class listOfareatrip extends Activity {
             public void run() {
                 // TODO Auto-generated method stub
                 arealist= tourapi.get_area(get_Url,sp1,sp2);
-
 
 
                 runOnUiThread(new Runnable() {
@@ -204,6 +202,7 @@ public class listOfareatrip extends Activity {
             }
         }).start();
     }
+
 
     public void scndSpinner(int i){
 

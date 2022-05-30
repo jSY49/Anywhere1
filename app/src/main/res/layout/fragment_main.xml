@@ -16,14 +16,49 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/test_img"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/WhereIsNext"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="15dp"
-            android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/txt_wherIsnext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/WhereIsNext"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txt_HomeGomore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/GoMoreTrip"
+                android:textColor="@color/black"
+                android:layout_alignParentRight="true"/>
+
+
+
+<!--            <Button-->
+<!--                android:id="@+id/homegoMore"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_toRightOf="@+id/txt_wherIsnext"-->
+<!--                android:layout_marginLeft="40dp"-->
+<!--                android:background="#00ff0000"-->
+<!--                android:shadowColor="#0f0f0f"-->
+<!--                android:shadowDx="1.0"-->
+<!--                android:shadowDy="2.0"-->
+<!--                android:shadowRadius="2.0"-->
+<!--                android:text="@string/GoMoreTrip"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="#000000" />-->
+
+
+
+        </RelativeLayout>
 
         <HorizontalScrollView
             android:layout_width="match_parent"
@@ -36,7 +71,10 @@
                     android:id="@+id/hometripimg1"
                     android:layout_width="250dp"
                     android:layout_height="150dp"
-                    android:layout_margin="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
                     android:src="@drawable/test_img" />
 
                 <ImageView
@@ -65,46 +103,7 @@
             </RelativeLayout>
         </HorizontalScrollView>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:stretchColumns="*"
-            android:layout_margin="10dp">
 
-            <TableRow>
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/GoMoreTrip"
-                    android:textColor="#000000"
-                    android:id="@+id/homegoMore"
-                    android:textAllCaps="false"
-                    android:background="#00ff0000"
-                    android:shadowColor ="#0f0f0f"
-                    android:shadowRadius="5.0"
-                    android:shadowDx="3.0"
-                    android:shadowDy="5.0"
-                    />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/GowhetherIsGood"
-                    android:textColor="#000000"
-                    android:id="@+id/homegowhtr"
-                    android:textAllCaps="false"
-                    android:background="#00ff0000"
-                    android:shadowColor ="#0f0f0f"
-                    android:shadowRadius="5.0"
-                    android:shadowDx="3.0"
-                    android:shadowDy="5.0"
-                    />
-
-            </TableRow>
-
-
-        </TableLayout>
 
         <TextView
             android:layout_margin="15dp"
@@ -117,14 +116,17 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/homesellimg1"
                 android:layout_width="350dp"
                 android:layout_height="200dp"
-                android:src="@drawable/test_img"
-                android:layout_margin="10dp"
                 android:layout_centerHorizontal="true"
-                />
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/test_img" />
 
             <ImageView
                 android:id="@+id/homesellimg2"

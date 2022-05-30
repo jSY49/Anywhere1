@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
                     R.id.nav1 -> {
                         MainFragment()
                     }
+                    R.id.nav1_2 -> {
+                        PagesFragment()
+                    }
                     R.id.nav2 -> {
                         BookFragment()
                     }

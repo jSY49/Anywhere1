@@ -9,6 +9,13 @@
         android:title="home"
         />
     <item
+        android:id="@+id/nav1_2"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_article_24"
+        android:title="pages"
+        />
+    <item
         android:id="@+id/nav2"
         app:showAsAction="ifRoom"
         android:enabled="true"

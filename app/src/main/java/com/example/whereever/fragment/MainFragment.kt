@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import com.example.whereever.R
 import com.example.whereever.arealist
 import com.example.whereever.listOfareatrip
 import com.example.whereever.wheatherIsClean
@@ -40,20 +42,9 @@ class MainFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(com.example.whereever.R.layout.fragment_main, container, false)
-        val homegowhtrButton = view.findViewById<Button>(com.example.whereever.R.id.homegowhtr)
-        val homegomrButton = view.findViewById<Button>(com.example.whereever.R.id.homegoMore)
+        val homegomrTv = view.findViewById<TextView>(com.example.whereever.R.id.txt_HomeGomore)
 
-
-        homegowhtrButton?.setOnClickListener(object :View.OnClickListener {
-            override fun onClick(v: View?) {
-
-                val intent = Intent(getActivity(), wheatherIsClean::class.java)
-                startActivity(intent)
-
-            }
-        })
-
-        homegomrButton?.setOnClickListener(object :View.OnClickListener {
+        homegomrTv?.setOnClickListener(object :View.OnClickListener {
             override fun onClick(v: View?) {
 
                 val intent = Intent(getActivity(), listOfareatrip::class.java)
