@@ -76,6 +76,7 @@ public class ListViewAdapter extends BaseAdapter {
         TextView descTextView = (TextView) convertView.findViewById(R.id.textView2) ;
 
 
+
         titleTextView.setText(listViewItem.getTitle());
         descTextView.setText(listViewItem.getaddr());
         //Picasso.get().load(listViewItem.getimgurl()).fit().placeholder(R.drawable.brankimg).into(ImageView);

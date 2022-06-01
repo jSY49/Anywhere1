@@ -23,7 +23,7 @@ public class TourApi_ {
         //String settingUrl="http://api.visitkorea.or.kr/openapi/service/rest/KorService/";
     }
     public TourApi_(String wantService) {
-        basicUrl += wantService + "?ServiceKey=" + BuildConfig.MY_API_KEY + "&numOfRows=30&pageNo=1&MobileOS=ETC&MobileApp=AppTest";
+        basicUrl += wantService + "?ServiceKey=" + BuildConfig.MY_API_KEY + "&numOfRows=100&pageNo=1&MobileOS=ETC&MobileApp=AppTest";
     }
 
 
@@ -44,7 +44,8 @@ public class TourApi_ {
     String[][] get_area(String newUrl,String sp1,String sp2){
 
 
-        arealist= new String[3][30];
+        arealist= new String[3][100];
+
         int i=0,j=0,k=0;
         StringBuffer buffer=new StringBuffer();
 
@@ -112,6 +113,7 @@ public class TourApi_ {
             // TODO Auto-generated catch blocke.printStackTrace();
             e.printStackTrace();
         }
+
 
         //return buffer.toString();//StringBuffer 문자열 객체 반환
         return arealist;

@@ -49,7 +49,7 @@ public class listOfareatrip extends Activity {
         spin1 = (Spinner)findViewById(R.id.spinner1);
         spin2 = (Spinner)findViewById(R.id.spinner2);
         sortspin = (Spinner)findViewById(R.id.sortspinenr);
-        arealist= new String[3][30];
+//        arealist= new String[3][30];
 
 
 
@@ -167,7 +167,9 @@ public class listOfareatrip extends Activity {
         tourapi.set_tourdataList_Url(sp1,sp2,srt);
         String get_Url=tourapi.getUrl();
 
+//       arealist=null;
 
+        arealist=new String[3][];
 
         Log.d("set_tourdataList_getURL",get_Url);
         adapter.clearAll(); //리스트 뷰를 모두 지우는 함수 호출
@@ -178,6 +180,7 @@ public class listOfareatrip extends Activity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
+
                 arealist= tourapi.get_area(get_Url,sp1,sp2);
 
 
@@ -187,8 +190,11 @@ public class listOfareatrip extends Activity {
                         // TODO Auto-generated method stub
                         //아이템 추가.
 
-                        for(int i=0;i<30;i++){
-                            adapter.addItem(new ListViewItem(arealist[0][i],arealist[1][i],arealist[2][i])) ;
+                        for(int i=0;i<arealist[0].length;i++){
+                            if(arealist[1][i]==null)
+                                break;
+                            else
+                                adapter.addItem(new ListViewItem(arealist[0][i], arealist[1][i], arealist[2][i])) ;
                         }
                         listview.setAdapter(adapter);
 
