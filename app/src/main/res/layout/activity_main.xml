@@ -11,6 +11,7 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@color/Background"
         tools:ignore="MissingConstraints">
 
 <!--        <TextView-->
@@ -58,11 +59,13 @@
         app:menu="@menu/navigationmenu"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="#FFFFFF"
-        app:labelVisibilityMode="labeled"
+        android:background="@color/Background"
+        app:labelVisibilityMode="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:itemIconTint="@color/navigationblue"
+        app:itemTextColor="@color/navigationblue"
         />
 
 

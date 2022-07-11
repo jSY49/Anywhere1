@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import com.example.whereever.R
-import com.example.whereever.arealist
 import com.example.whereever.listOfareatrip
 import com.example.whereever.wheatherIsClean
 

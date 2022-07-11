@@ -38,14 +38,14 @@
                     android:id="@+id/spinner1"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:spinnerMode="dropdown"
+                    android:spinnerMode="dialog"
                     android:popupBackground="@color/white"
                     />
                 <Spinner
                     android:id="@+id/spinner2"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:spinnerMode="dropdown"
+                    android:spinnerMode="dialog"
                     android:popupBackground="@color/white"
                     />
                 <Button

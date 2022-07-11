@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.searchFragment">
+    tools:context=".fragment.searchFragment"
+    android:background="@color/Background">
 
     <RelativeLayout
         android:layout_width="match_parent"

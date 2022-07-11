@@ -21,6 +21,7 @@
     </string-array>
 
     <string-array name="second_seoul">
+        <item>전체</item>
         <item>강남구</item>
         <item>강동구</item>
         <item>강북구</item>
@@ -49,6 +50,7 @@
     </string-array>
 
     <string-array name="second_incheon">
+        <item>전체</item>
         <item>강화군</item>
         <item>계양구</item>
         <item>미추홀구</item>
@@ -62,6 +64,7 @@
     </string-array>
 
     <string-array name="second_daejeon">
+        <item>전체</item>
         <item>대덕구</item>
         <item>동구</item>
         <item>서구</item>
@@ -70,6 +73,7 @@
     </string-array>
 
     <string-array name="second_daegu">
+        <item>전체</item>
         <item>남구</item>
         <item>달서구</item>
         <item>달성군</item>
@@ -81,6 +85,7 @@
     </string-array>
 
     <string-array name="second_guangju">
+        <item>전체</item>
         <item>광산구</item>
         <item>남구</item>
         <item>동구</item>
@@ -89,6 +94,7 @@
     </string-array>
 
     <string-array name="second_busan">
+        <item>전체</item>
         <item>강서구</item>
         <item>금정구</item>
         <item>기장군</item>
@@ -108,6 +114,7 @@
     </string-array>
 
     <string-array name="second_ulsan">
+        <item>전체</item>
         <item>중구</item>
         <item>남구</item>
         <item>동구</item>
@@ -115,9 +122,11 @@
         <item>울주군</item>
     </string-array>
     <string-array name="second_sejong">
+        <item>전체</item>
         <item>세종특별자치시</item>
     </string-array>
     <string-array name="second_geonggi">
+        <item>전체</item>
         <item>가평군</item>
         <item>고양시</item>
         <item>과천시</item>
@@ -151,6 +160,7 @@
         <item>화성시</item>
     </string-array>
     <string-array name="second_gangwon">
+        <item>전체</item>
         <item>강릉시</item>
         <item>고성군</item>
         <item>동해시</item>
@@ -171,6 +181,7 @@
         <item>횡성군</item>
     </string-array>
     <string-array name="second_chungbuk">
+        <item>전체</item>
         <item>괴산군</item>
         <item>단양군</item>
         <item>보은군</item>
@@ -185,6 +196,7 @@
         <item>증평군</item>
     </string-array>
     <string-array name="second_chungnam">
+        <item>전체</item>
         <item>공주시</item>
         <item>금산군</item>
         <item>논산시</item>
@@ -202,6 +214,7 @@
         <item>계룡시</item>
     </string-array>
     <string-array name="second_gyeongbuk">
+        <item>전체</item>
         <item>경산시</item>
         <item>경주시</item>
         <item>고령군</item>
@@ -227,6 +240,7 @@
         <item>포항시</item>
     </string-array>
     <string-array name="second_gyeongnam">
+        <item>전체</item>
         <item>거제시</item>
         <item>거창군</item>
         <item>고성군</item>
@@ -249,6 +263,7 @@
         <item>합천군</item>
     </string-array>
     <string-array name="second_jeonbuk">
+        <item>전체</item>
         <item>고창군</item>
         <item>군산시</item>
         <item>김제시</item>
@@ -265,6 +280,7 @@
         <item>진안군</item>
     </string-array>
     <string-array name="second_jeonnam">
+        <item>전체</item>
         <item>강진군</item>
         <item>고흥군</item>
         <item>곡성군</item>
@@ -290,6 +306,7 @@
     </string-array>
 
     <string-array name="second_jeju">
+        <item>전체</item>
         <item>남제주군</item>
         <item>북제주군</item>
         <item>서귀포시</item>

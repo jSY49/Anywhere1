@@ -23,7 +23,7 @@ public class TourApi_ {
         //String settingUrl="http://api.visitkorea.or.kr/openapi/service/rest/KorService/";
     }
     public TourApi_(String wantService) {
-        basicUrl += wantService + "?ServiceKey=" + BuildConfig.MY_API_KEY + "&numOfRows=100&pageNo=1&MobileOS=ETC&MobileApp=AppTest";
+        basicUrl += wantService + "?ServiceKey=" + BuildConfig.MY_API_KEY + "&numOfRows=1000&pageNo=1&MobileOS=ETC&MobileApp=AppTest";
     }
 
 
@@ -35,16 +35,21 @@ public class TourApi_ {
     
     String set_tourdataList_Url(String sp1,String sp2,String srt){
         Log.d("pr_set__Url: ",basicUrl);
-        basicUrl += "&areaCode="+sp1+"&sigunguCode="+sp2+"&contentTypeId=12"+"&arrange="+srt;//contentTypeId 12는 관광지   arrange는 정렬
+        if(sp2.equals("0")){
+            basicUrl += "&areaCode="+sp1+"&contentTypeId=12"+"&arrange="+srt;
+        }
+        else{
+            basicUrl += "&areaCode="+sp1+"&sigunguCode="+sp2+"&contentTypeId=12"+"&arrange="+srt;//contentTypeId 12는 관광지   arrange는 정렬
+        }
         Log.d("set_tourdataList_Url: ",basicUrl);
         return basicUrl;
     }
 
     //+ areaCode=??&sigunguCode=??
-    String[][] get_area(String newUrl,String sp1,String sp2){
+    String[][] get_area(String newUrl){
 
 
-        arealist= new String[3][100];
+        arealist= new String[3][1000];
 
         int i=0,j=0,k=0;
         StringBuffer buffer=new StringBuffer();

@@ -1,6 +1,7 @@
 package com.example.whereever;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,10 +25,10 @@ import java.util.ArrayList;
 public class listOfareatrip extends Activity {
 
     Button bckbtn,searchbtn;
-    String sp1="1",sp2="1",srt="A";
+    String sp1="1",sp2="0",srt="O";
     ArrayAdapter<CharSequence> adspin1, adspin2,adsortspin;
     String[][] arealist;
-
+    String contentId;
     Spinner spin1;
     Spinner spin2;
     Spinner sortspin;
@@ -93,7 +94,8 @@ public class listOfareatrip extends Activity {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                sp2= String.valueOf(i+1);
+
+                sp2= String.valueOf(i);
 
             }
             @Override
@@ -107,16 +109,16 @@ public class listOfareatrip extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(adsortspin.getItem(i).equals("제목순")){
-                    srt="A";
+                    srt="O";
                 }
                 else if(adsortspin.getItem(i).equals("조회순")){
-                    srt="B";
+                    srt="P";
                 }
                 else if(adsortspin.getItem(i).equals("수정일순")){
-                    srt="C";
+                    srt="Q";
                 }
                 else if(adsortspin.getItem(i).equals("생성일순")){
-                    srt="D";
+                    srt="R";
                 }
                 runthread();
             }
@@ -155,12 +157,17 @@ public class listOfareatrip extends Activity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), areatripDetail.class);
+                intent.putExtra("contentId",position);
+                Log.d("postion1",String.valueOf(position));
+                startActivity(intent);
 
-                // TODO : use item data.
             }
         }) ;
 
     }
+
+
     public void runthread(){
 
         TourApi_ tourapi=new TourApi_("areaBasedList");
@@ -181,7 +188,7 @@ public class listOfareatrip extends Activity {
             public void run() {
                 // TODO Auto-generated method stub
 
-                arealist= tourapi.get_area(get_Url,sp1,sp2);
+                arealist= tourapi.get_area(get_Url);
 
 
                 runOnUiThread(new Runnable() {
@@ -189,13 +196,15 @@ public class listOfareatrip extends Activity {
                     public void run() {
                         // TODO Auto-generated method stub
                         //아이템 추가.
-
-                        for(int i=0;i<arealist[0].length;i++){
-                            if(arealist[1][i]==null)
+                        int i=0;
+                        for(i=0;i<arealist[0].length;i++){
+                            if(arealist[0][i]==null)
                                 break;
                             else
                                 adapter.addItem(new ListViewItem(arealist[0][i], arealist[1][i], arealist[2][i])) ;
+
                         }
+                        Log.d("HowmanyI ", String.valueOf(i));
                         listview.setAdapter(adapter);
 
 
