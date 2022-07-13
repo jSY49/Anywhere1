@@ -28,7 +28,7 @@ public class listOfareatrip extends Activity {
     String sp1="1",sp2="0",srt="O";
     ArrayAdapter<CharSequence> adspin1, adspin2,adsortspin;
     String[][] arealist;
-    String contentId;
+    String[] contentId;
     Spinner spin1;
     Spinner spin2;
     Spinner sortspin;
@@ -36,6 +36,8 @@ public class listOfareatrip extends Activity {
     //리스트 뷰
     ListView listview ;
     ListViewAdapter adapter;
+
+//    TourApi_ tourapi=new TourApi_("areaBasedList");
 
 
 
@@ -158,8 +160,8 @@ public class listOfareatrip extends Activity {
             @Override
             public void onItemClick(AdapterView parent, View v, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), areatripDetail.class);
-                intent.putExtra("contentId",position);
-                Log.d("postion1",String.valueOf(position));
+                intent.putExtra("contentId",contentId[position]);
+
                 startActivity(intent);
 
             }
@@ -176,7 +178,7 @@ public class listOfareatrip extends Activity {
 
 //       arealist=null;
 
-        arealist=new String[3][];
+        arealist=new String[4][];
 
         Log.d("set_tourdataList_getURL",get_Url);
         adapter.clearAll(); //리스트 뷰를 모두 지우는 함수 호출
@@ -189,19 +191,22 @@ public class listOfareatrip extends Activity {
                 // TODO Auto-generated method stub
 
                 arealist= tourapi.get_area(get_Url);
-
+                contentId=new String[arealist[0].length];
 
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         // TODO Auto-generated method stub
                         //아이템 추가.
-                        int i=0;
+                        int i=0,j=0;
                         for(i=0;i<arealist[0].length;i++){
                             if(arealist[0][i]==null)
                                 break;
-                            else
+                            else{
                                 adapter.addItem(new ListViewItem(arealist[0][i], arealist[1][i], arealist[2][i])) ;
+                                contentId[j++]=arealist[3][i];
+                            }
+
 
                         }
                         Log.d("HowmanyI ", String.valueOf(i));

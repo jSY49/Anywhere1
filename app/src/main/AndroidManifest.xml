@@ -29,6 +29,10 @@
         <activity android:name=".userActivity"/>
         <activity android:name=".listOfareatrip"/>
         <activity android:name=".areatripDetail"/>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCWQU33ByqLZDk__XgagVNJJ8wMrQDEZUo" />
     </application>
 
 </manifest>

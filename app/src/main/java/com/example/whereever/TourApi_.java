@@ -49,10 +49,10 @@ public class TourApi_ {
     String[][] get_area(String newUrl){
 
 
-        arealist= new String[3][1000];
+        arealist= new String[4][1000];
 
-        int i=0,j=0,k=0;
-        StringBuffer buffer=new StringBuffer();
+        int i=0,j=0,k=0,c=0;
+        //StringBuffer buffer=new StringBuffer();
 
         try {
             Log.d("totalCount_newUrl1: ",newUrl);
@@ -74,7 +74,7 @@ public class TourApi_ {
             while( eventType != XmlPullParser.END_DOCUMENT ){
                 switch( eventType ){
                     case XmlPullParser.START_DOCUMENT:
-                        buffer.append("파싱 시작...\n\n");
+                        //buffer.append("파싱 시작...\n\n");
                         break;
 
                     case XmlPullParser.START_TAG:
@@ -96,6 +96,11 @@ public class TourApi_ {
                             arealist[2][k]=xpp.getText();
                             k++;
                         }
+                        else if(tag.equals("contentid")){
+                            xpp.next();
+                            arealist[3][c]=xpp.getText();
+                            c++;
+                        }
 
                         break;
 
@@ -105,7 +110,7 @@ public class TourApi_ {
                     case XmlPullParser.END_TAG:
                         tag= xpp.getName(); //태그 이름 얻어오기
 
-                        if(tag.equals("item")) buffer.append("\n");// 첫번째 검색결과종료..줄바꿈
+                        if(tag.equals("item")) //buffer.append("\n");// 첫번째 검색결과종료..줄바꿈
 
                         break;
 
@@ -126,6 +131,12 @@ public class TourApi_ {
     }
 
 
+    String set_cIddetail_Url(String cId){
+
+        basicUrl +="&contentId="+cId+"&defaultYN=Y&firstImageYN=Y&areacodeYN=Y&catcodeYN=Y&addrinfoYN=Y&mapinfoYN=Y&overviewYN=Y";
+        Log.d("cId_url",basicUrl);
+        return basicUrl;
+    }
 
 
 

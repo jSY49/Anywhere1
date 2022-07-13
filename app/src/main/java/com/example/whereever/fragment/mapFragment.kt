@@ -6,6 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.whereever.R
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,17 +28,36 @@ class mapFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        
+        
+        //이거 싹다 액티빕티에서 작동하는 거
+        //ui또 변경해야함 짜증
+//        setContentView(R.layout.fragment_map)
+//
+//        val mapFragment = supportFragmentManager
+//            .findFragmentById(R.id.map) as SupportMapFragment
+//        mapFragment.getMapAsync(this)
+
     }
+
+//    override fun onMapReady(googleMap: GoogleMap) {
+//        googleMap.addMarker(
+//            MarkerOptions()
+//                .position(LatLng(0.0, 0.0))
+//                .title("Marker")
+//        )
+//    }
+//
+//
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
+
+
         return inflater.inflate(R.layout.fragment_map, container, false)
     }
 

@@ -27,17 +27,17 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/WhereIsNext"
-                android:textColor="@color/black" />
+                android:textColor="@color/OnBackground" />
 
             <TextView
                 android:id="@+id/txt_HomeGomore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
                 android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
                 android:text="@string/GoMoreTrip"
-                android:textColor="@color/black"
-                android:layout_alignParentRight="true"/>
+                android:textColor="@color/OnBackground" />
 
 
 
@@ -104,14 +104,13 @@
         </HorizontalScrollView>
 
 
-
         <TextView
-            android:layout_margin="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/howisthisitem"
+            android:layout_margin="15dp"
             android:layout_marginLeft="15dp"
-            android:textColor="@color/black"/>
+            android:text="@string/howisthisitem"
+            android:textColor="@color/OnBackground" />
 
         <RelativeLayout
             android:layout_width="match_parent"

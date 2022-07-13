@@ -23,7 +23,7 @@
             android:text="@string/AreaTrip"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:textColor="@color/black"
+            android:textColor="@color/OnBackground"
             />
 
 
