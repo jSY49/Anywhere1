@@ -1,7 +1,5 @@
 package com.example.whereever;
 
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.internal.IGoogleMapDelegate;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -28,7 +26,7 @@ import java.net.URL;
 public class areatripDetail extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    Button bckbtn;
+    Button bckbtn,fullscreenBtn;
     ImageView detailImg1;
     TextView detailNm,detailOv,detailaddr;
     String cId,Url,Title="Seoul",addr,img1,img2,overview;
@@ -52,15 +50,14 @@ public class areatripDetail extends AppCompatActivity implements OnMapReadyCallb
         //positionTv.setText(Url);
         runthread();
 
+
         //정적
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        //맵 클릭 이벤트 작동 안하도록
+        View view = mapFragment.getView();
+        view.setClickable(false);
+        //여기까지
         mapFragment.getMapAsync(this);
-//        //동적
-//        SupportMapFragment mapFragment = SupportMapFragment.newInstance();
-//        getSupportFragmentManager()
-//                .beginTransaction()
-//                .add(R.id.map, mapFragment)
-//                .commit();
 
 
 
@@ -73,6 +70,17 @@ public class areatripDetail extends AppCompatActivity implements OnMapReadyCallb
             }
         });
 
+        fullscreenBtn=findViewById(R.id.fullscreenBtn);
+        fullscreenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MapFullscreen.class);
+                intent.putExtra("Lat",Lat);
+                intent.putExtra("Lng",Lng);
+                intent.putExtra("Title",Title);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -81,11 +89,20 @@ public class areatripDetail extends AppCompatActivity implements OnMapReadyCallb
 //        googleMap.addMarker(new MarkerOptions()
 //                .position(new LatLng(Lat, Lng))
 //                .title(Title));
+
+        GoogleMapOptions options = new GoogleMapOptions().liteMode(true);
+
         googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);                     // 지도 유형 설정
+
         googleMap.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
             @Override
             public void onMapLoaded() {
                 mMap = googleMap;
+                mMap.setBuildingsEnabled(true); // Don't show 3D buildings
+                mMap.getUiSettings().setMapToolbarEnabled(false); // No toolbar needed in a lite preview
+
+
+
                 LatLng Point = new LatLng(Lat, Lng);
 
                 MarkerOptions markerOptions = new MarkerOptions();         // 마커 생성
@@ -126,12 +143,12 @@ public class areatripDetail extends AppCompatActivity implements OnMapReadyCallb
                         // TODO Auto-generated method stub
 
                         setImg();
+                        overview=overview.replace("<br/>","");
                         overview=overview.replace("<br>","\n");
-//                        overview=overview.replace("<br>*","");
                         overview=overview.replace(".",".\n ");
                         detailNm.setText(Title);
-                        detailOv.setText(" "+overview);
-                        detailaddr.setText(addr);
+                        detailOv.setText("\n "+overview);
+                        detailaddr.setText("주소 : "+addr);
 
                     }
                 });
